@@ -1,12 +1,5 @@
 import csv
 import random
-from tokenize import String
-
-from numpy import double
-
-
-aux = []
-valor = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 def main():
     data = [['LLEGADA', 'ESPERA']]
@@ -14,9 +7,9 @@ def main():
         # Random de la hora de llegada
         horaL = random.randint(13, 21)
         minutoL = random.randint(0, 59)
+        
         # Random del tiempo de espera
-        horaE = random.randint(0,50)
-        minutoE = random.randint(0,50)
+        minutoE = random.randint(5, 59)
         
         if minutoL > 9:
             datoH = str(horaL) + '.' + str(minutoL)
@@ -45,6 +38,7 @@ def main():
     escribirCsv(data)
 
 def minutosMenores(m):
+    valor = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     for j in range(len(valor)):
         if m == valor[j]:
             numero = str(m)
